@@ -1,20 +1,105 @@
-// Final Project pemdas.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+class bidangDatar {
+private:
+int x, y;
+
+public:
+    bidangDatar() {
+        x = 0;
+        y = 0;
+    }
+
+    virtual void input(){}
+    virtual float Luas(int a) {
+        return 0;
+    }
+    virtual float Keliling(int a) {
+        return 0;
+    }
+    virtual void cekUkuran() {
+        return /*0*/;
+    }
+    void setX(int a) {
+        this->x = a;
+    }
+    int getX() {
+        return x;
+    }
+
+                     /*lengkapi disini*/
+    virtual float Luas(int p, int l) {
+        return 0;
+    }
+    virtual float Keliling(int p, int l) {
+        return 0;
+    }
+    virtual void cekUkuran() {
+        return /*0*/;
+    }
+    void setY(int p, int l) {
+        this->y = p, l;
+    }
+    int getY() {
+        return y;
+    }
+};
+
+class Lingkaran :public bidangDatar {
+    /*lengkapi disini*/ 
+public:
+    void input() {
+        int a;
+        cout << "\nLingkaran dibuat\n";
+        cout << "Masukkan jejari: ";
+        cin >> a;
+    }
+    float Luas(int a) {
+        return 3.14 * a * a;
+
+    }
+    float Keliling(int a) {
+        return 2 * 3.14 * a;
+    }
+
+    void cekUkuran() {
+        return;
+    }
+};
+
+class Persegipanjang :public bidangDatar {
+    /*lengkapi disini*/ 
+public:
+    void input() {
+        int p, int l;
+        cout << "\nPersegi panjang dibuat\n";
+        cout << "Masukkan Panjang: ";
+        cin >> p;
+        cout << "Masukkan Lebar: ";
+        cin >> l;
+    }
+    float Luas(int p, int l) {
+        return p * l;
+
+    }
+    float Keliling(int p, int l) {
+        return 2 * (p + l);
+    }
+    void cekUkuran() {
+        return;
+    }
+};
+
+
+int main() {
+    
+    /*lengkapi disini*/ 
+    Lingkaran a;
+    a.input();
+
+    Persegipanjang b;
+    b.input();
+   
+   
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
